@@ -1,29 +1,29 @@
-# pa-file-server-g6
+# JavaFileSystem
 
-O projeto proposto, definido de agora em diante como “pa-file-server”, tem como objetivo a criação de um servidor de ficheiros de texto com encriptação de modo a que todas as trocas de mensagens e ficheiros sejam seguras e íntegras.
+JavaFileSystem is designed to create a text file server with encryption, ensuring that all message and file exchanges are secure and maintain their integrity.
 
-De uma forma geral, o pa-file-server deverá ser composto por um servidor, ao qual um ou mais clientes se poderão ligar. O servidor segue o paradigma request-reply, no qual cada cliente, após se autenticar no servidor, poderá solicitar ficheiros de texto que serão devolvidos pelo servidor.
+In general, JavaFileSystem should consist of a server to which one or more clients can connect. The server follows the request-reply paradigm, where each client, after authenticating with the server, can request text files, which the server will return.
 
-A confidencialidade e integridade dos dados serão a maior prioridade do servidor. Por essa razão, toda a comunicação com o servidor deverá ser encriptada e todos os ficheiros retornados pelo servidor deverão ser encriptados e íntegros.
+The confidentiality and integrity of the data will be the server's highest priority. For this reason, all communication with the server must be encrypted, and all files returned by the server must be encrypted and maintain their integrity.
 
-O servidor possui um diretório server/files, que deverá guardar todos os ficheiros servidos pelo servidor. Quando o servidor é iniciado, deverá ser gerado um par de chaves (uma pública e uma privada). O servidor deverá guardar a sua chave privada em memória, enquanto que a chave pública deverá ficar guardada com o nome serverPUk.key no diretório pki/public_keys.
+The server has a directory 'server/files', which should store all files served by the server. When the server is started, a pair of keys (one public and one private) should be generated. The server should keep its private key in memory, while the public key should be stored with the name 'serverPUk.key' in the 'pki/public_keys' directory.
 
-## Instalação
+## Installation
 
-Para instalar esta simples aplicação basta fazer o clone deste repositório para a máquina local.
+To install this simple application, just clone this repository to your local machine.
 
 ```bash
-git clone https://github.com/pedrojaques21/pa-file-server-G6
+git clone https://github.com/MarcoAbreu2002/JavaFileSystem
 ```
 
-## Utilização
+## Usage
 
-Para utilizar este projeto basta abrir o repositório com o seu IDE perferido e correr primeiramente o MainServer de forma a iniciar o servidor. Após o servidor ser iniciado, na configuração do MainClient é necessário habilitar a inicialização de várias instâncias, depois podemos iniciar os clientes selecionado o MainClient e correndo.
+To use this project, simply open the repository with your preferred IDE and first run the MainServer to start the server. After the server is started, in the MainClient configuration, enable the initialization of multiple instances, then you can start the clients by selecting and running MainClient.
 
-No cliente é necessário providenciar o nome e posteriormente selecionar os algoritmos de encriptação e algoritmo de hash.
+On the client, you need to provide the name and then select the encryption algorithms and hash algorithm.
 
-Depois o cliente pode requisitar ficheiros que estejam no servidor utilizando o comando "GET : <nome-do-ficheiro>.<extenção-do-ficheiro>".
+Then the client can request files that are on the server using the command "GET : <file-name>.<file-extension>".
   
-## Observações
+## Notes
   
-Por questões de testes unitários existem valores pré-definidos no ficheiro numOfRequestsMap.txt
+For unit testing purposes, there are predefined values in the numOfRequestsMap.txt file.
